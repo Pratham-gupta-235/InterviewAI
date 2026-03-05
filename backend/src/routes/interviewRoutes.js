@@ -1,7 +1,6 @@
 const express = require('express');
 const { getInterviews, getInterviewById, createInterview } = require('../controllers/interviewController');
 
-// Router-level middleware initialization
 const router = express.Router();
 
 router.get('/', getInterviews);

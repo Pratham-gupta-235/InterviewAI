@@ -35,6 +35,10 @@ app.get('/', (req, res) => {
 });
 
 // Routes
+app.get('/health', (req, res) => {
+    res.status(200).json({ status: 'ok', message: 'Server is healthy', timestamp: new Date() });
+});
+
 app.use('/api/v1/interviews', interviewRoutes);
 
 const errorHandler = require('./middlewares/errorMiddleware');
