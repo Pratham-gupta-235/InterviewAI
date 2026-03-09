@@ -8,7 +8,6 @@ Based on the project's current state, here are the features that have been imple
 - **Environment Variables**: Uses `dotenv` for managing environment-specific configurations.
 
 ## 2. Middlewares
-- **CORS Support**: Cross-Origin Resource Sharing is enabled for frontend-backend communication.
 - **JSON Body Parsing**: Built-in support for parsing JSON payloads and URL-encoded data.
 - **Custom Logging**: A custom Application-level logger middleware (`loggerMiddleware.js`) intercepts and logs requests.
 - **Error Handling**: A centralized error handling middleware (`errorMiddleware.js`) manages application errors.
