@@ -4,13 +4,12 @@ const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
 const loggerMiddleware = require('./middlewares/loggerMiddleware');
-const interviewRoutes = require('./routes/interviewRoutes');
+const interviewRoutes = require('./routes/interview.routes');
 
 const app = express();
 
 // Middlewares
-app.use(cors());
-app.use(express.json()); // Parse JSON payloads
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(loggerMiddleware); // Custom Application-level middleware
 
@@ -41,7 +40,7 @@ app.get('/health', (req, res) => {
 
 app.use('/api/v1/interviews', interviewRoutes);
 
-const errorHandler = require('./middlewares/errorMiddleware');
+const errorHandler = require('./middlewares/error');
 
 app.use(errorHandler);
 

@@ -1,7 +1,8 @@
 const express = require('express');
-const { getInterviews, getInterviewById, createInterview } = require('../controllers/interviewController');
+const { getInterviews, getInterviewById, createInterview } = require('../controllers/interview.controller');
 
-const router = express.Router();
+
+const router = express();
 
 router.get('/', getInterviews);
 router.get('/:id', getInterviewById);

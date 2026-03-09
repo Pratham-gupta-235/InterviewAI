@@ -1,7 +1,7 @@
 const http = require('http');
 const app = require('./app');
 const connectDB = require('./config/db');
-
+const error = require('./middlewares/error'); // Ensure error handling middleware is loaded
 // Setup environment variables if not done already
 require('dotenv').config();
 
@@ -17,6 +17,8 @@ const server = http.createServer(app);
 server.listen(PORT, () => {
     console.log(`Server running in ${process.env.NODE_ENV || 'development'} mode on port ${PORT}`);
 });
+
+app.use(error); 
 
 // Handle unhandled promise rejections
 process.on('unhandledRejection', (err, promise) => {
