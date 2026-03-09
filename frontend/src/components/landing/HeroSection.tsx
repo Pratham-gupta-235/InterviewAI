@@ -72,7 +72,7 @@ const HeroSection = () => {
             </motion.div>
 
             {/* Headline with split animation */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[1] mb-6 overflow-hidden">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1] mb-6 overflow-hidden">
               <motion.span {...heroTimeline.headlineTop} className="block">
                 Ace your next
               </motion.span>
@@ -126,6 +126,8 @@ const HeroSection = () => {
             <Spline
               scene="https://prod.spline.design/fT6u-SNGjIccSXRI/scene.splinecode" 
             />
+            {/* Small black box overlay at the bottom right */}
+            <div className="absolute bottom-2 right-2 w-[150px] h-[50px] bg-black z-50 rounded-sm"></div>
           </div>
         </div>
       </div>
