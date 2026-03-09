@@ -8,7 +8,7 @@ require('dotenv').config();
 const PORT = process.env.PORT || 5000;
 
 // Connect to Database
-connectDB();
+// connectDB();
 
 // Create the HTTP server using the Express app
 const server = http.createServer(app);
