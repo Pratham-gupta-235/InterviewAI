@@ -14,9 +14,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(loggerMiddleware); // Custom Application-level middleware
 
-// Serve Static Files (Vite Frontend Build)
-const frontendDistPath = path.join(__dirname, '../../frontend/dist');
-app.use(express.static(frontendDistPath));
+const frontend = path.join(__dirname, 'public/index.html');
+app.use(express.static(frontend));
 
 // Routes
 app.get('/health', (req, res) => {
@@ -24,11 +23,8 @@ app.get('/health', (req, res) => {
 });
 
 app.use('/api/v1/interviews', interviewRoutes);
+app.use('/api/v1/interviews/:id', interviewRoutes);
 
-// Fallback for React Router (Single Page Application)
-app.get('*', (req, res) => {
-    res.sendFile(path.join(frontendDistPath, 'index.html'));
-});
 
 const errorHandler = require('./middlewares/error');
 
